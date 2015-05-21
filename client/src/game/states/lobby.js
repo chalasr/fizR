@@ -24,13 +24,13 @@ Lobby.prototype = {
 			empty: {
 				outFrame: 0,
 				overFrame: 1,
-				text: "Host Game ", // For some reason, text gets slightly truncated if I don't append a space.
+				text: "Host new game ", // For some reason, text gets slightly truncated if I don't append a space.
 				callback: this.hostGameAction
 			},
 			joinable: {
 				outFrame: 2,
 				overFrame: 3,
-				text: "Join Game ",
+				text: "Join this game ",
 				callback: this.joinGameAction
 			},
 			settingup: {
@@ -101,7 +101,7 @@ Lobby.prototype = {
 
 			var slotYOffset = initialSlotYOffset + i * lobbySlotDistance;
 			this.slots[i] = game.add.button(slotXOffset, slotYOffset, "game_slot", callback, null, settings.overFrame, settings.outFrame);
-			
+
 			var text = game.add.text(slotXOffset + textXOffset, slotYOffset + textYOffset, settings.text);
 			TextConfigurer.configureText(text, "white", 18);
 			text.anchor.setTo(.5, .5);
