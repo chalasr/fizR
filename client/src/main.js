@@ -7,7 +7,7 @@ startGame();
 
 function startGame() {
 	// socket = io("https://limitless-brook-9339.herokuapp.com:443");
-    socket = io("http://fizr.herokuapp.com:443");
+    socket = io("https://fizr.herokuapp.com:443");
 
     require("./game/mods/phaser_enhancements");
 
