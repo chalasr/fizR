@@ -1,6 +1,7 @@
 # fizR
 
 HTML5 multiplayer game made in Javascript, build on individual school project.
+
 Read specs on [SPECS.pdf](SPECS.pdf)
 
 - Client : Phaser
