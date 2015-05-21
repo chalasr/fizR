@@ -15,4 +15,8 @@ HTML5 multiplayer game made in Javascript, build for individual school project.
 
 ##License
 
-This project is open-source and under **[GPL license](LICENSE.md)**
+This is an open-source under **[GPL license](LICENSE.md)** .
+
+##Credits
+
+Robin CHALAS - [chalasr.github.io](http://chalasr.github.io)
