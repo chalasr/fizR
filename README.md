@@ -1,4 +1,10 @@
-# bomb-arena
-An HTML5 multiplayer arena-style combat game made with Phaser and socket.io. Play here: https://limitless-brook-9339.herokuapp.com/
+# fizR
 
-Still a work in progress and under active development.
+HTML5 multiplayer game made in Javascript, build on individual school project.
+Read specs on [SPECS.pdf](SPECS.pdf)
+
+- Client : Phaser
+- Server on Socket.IO
+- Tasks management by Gulp
+
+Milestone : Friday, May 22th
