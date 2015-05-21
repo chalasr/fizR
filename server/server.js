@@ -22,7 +22,7 @@ var updateInterval = 100; // Broadcast updates every 100 ms.
 
 // Serve up index.html.
 app.use(express.static("client"));
-server.listen(8000);
+server.listen(process.env.PORT || 8000);
 
 init();
 
