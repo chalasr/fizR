@@ -49,24 +49,24 @@ TitleScreen.prototype = {
 
 		this.createClouds();
 		this.createButtons();
-	
+
 		var startButtonTween = this.createInitialButtonTween(this.startButton, 200);
 		var howToButtonTween = this.createInitialButtonTween(this.howToButton, 400);
-	
-		var title = game.add.image(titleOffsetX, titleOffsetY - 200, "titlescreen_title");
-	
-		var titleTween = game.add.tween(title);
-		titleTween.to({y: titleOffsetY}, 500, Phaser.Easing.Bounce.Out, true, 200).start();
-	
-		var bomberman = game.add.sprite(bombermanOffsetX + 400, bombermanOffsetY, "titlescreen_bomberman");
-		bomberman.animations.add("bomb_animation", [0, 1, 2, 3, 4], 5, true);
-	
-		var bombermanTween = game.add.tween(bomberman).to({x: bombermanOffsetX}, 300, Phaser.Easing.Default, false, 100);
-		bombermanTween.onComplete.addOnce(function() {
-			bomberman.animations.play("bomb_animation");
-		});
-	
-		bombermanTween.start();
+
+		// var title = game.add.image(titleOffsetX, titleOffsetY - 200, "titlescreen_title");
+
+		// var titleTween = game.add.tween(title);
+		// titleTween.to({y: titleOffsetY}, 500, Phaser.Easing.Bounce.Out, true, 200).start();
+
+		// var bomberman = game.add.sprite(bombermanOffsetX + 400, bombermanOffsetY, "titlescreen_bomberman");
+		// bomberman.animations.add("bomb_animation", [0, 1, 2, 3, 4], 5, true);
+
+		// var bombermanTween = game.add.tween(bomberman).to({x: bombermanOffsetX}, 300, Phaser.Easing.Default, false, 100);
+		// bombermanTween.onComplete.addOnce(function() {
+		// 	bomberman.animations.play("bomb_animation");
+		// });
+
+		// bombermanTween.start();
 		startButtonTween.start();
 		howToButtonTween.start();
 	},
@@ -80,25 +80,8 @@ TitleScreen.prototype = {
 		var cloudLeftmostPointX = -260;
 		var tweenDuration = cloudTweenDuration * (game.camera.width - cloudLeftmostPointX) / game.camera.width;
 
-		game.add.image(0, 0, "titlescreen_bg");
+		game.add.image(0, 75, "titlescreen_bg");
 
-		for(var x = 0; x < cloudData.length; x++) {
-			(function(data) {
-				var cloudImage = game.add.image(data.startingX, data.startingY, data.image);
-				cloudImage.anchor.setTo(0, 0);
-
-				var initialTweenDuration = cloudTweenDuration * (game.camera.width - data.startingX) / game.camera.width;
-				var cloudTween = game.add.tween(cloudImage).to({x: cloudRightmostPointX}, initialTweenDuration, Phaser.Easing.Default, true, 0, 0);
-
-				var completionFunction = function() {
-					cloudImage.x = cloudLeftmostPointX;
-					game.add.tween(cloudImage).to({x: cloudRightmostPointX}, tweenDuration, Phaser.Easing.Default, true, 0, -1).start();	
-				};
-
-				cloudTween.onComplete.addOnce(completionFunction);
-				cloudTween.start();
-			})(cloudData[x]);
-		};
 	},
 
 	createButtons: function() {
